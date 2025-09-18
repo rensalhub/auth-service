@@ -25,7 +25,7 @@ class PasswordValidatorTest {
 
         regexProperties = new PasswordRegexProperties();
         regexProperties.setRegex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,12}$");
-        validator = new PasswordValidator();
+        validator = new PasswordValidator(regexProperties);
         ReflectionTestUtils.setField(validator, "passwordRegexProperties", regexProperties);
         context = Mockito.mock(ConstraintValidatorContext.class);
     }
